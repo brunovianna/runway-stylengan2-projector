@@ -1,0 +1,9 @@
+Flask==1.0.2
+Flask-Cors==3.0.7
+h5py==2.9.0
+requests==2.21.0
+Werkzeug==0.14.1
+gevent>=1.4.0
+runway-python
+tensorflow-gpu==1.15.0
+scipy>=1.2.1
