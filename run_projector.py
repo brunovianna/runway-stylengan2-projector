@@ -28,6 +28,8 @@ def get_projected_images (proj, targets, num_snapshots):
         if proj.get_cur_step() in snapshot_steps:
             image_array.append(misc.convert_to_pil_image(proj.get_images()[0], drange=[-1,1]))
             #misc.save_image_grid(proj.get_images(),  './step%04d.png' % proj.get_cur_step(), drange=[-1,1])
+
+    image_array.append(misc.convert_to_pil_image(proj.get_images()[0], drange=[-1,1]))
     return (image_array)
 
 

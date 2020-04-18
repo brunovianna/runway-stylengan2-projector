@@ -47,7 +47,7 @@ def setup(opts):
 
 
 #@runway.command('project', inputs=project_inputs, outputs={'images': runway.array(item_type=runway.image, max_length=10)})
-@runway.command('project', inputs={'projectionImage': runway.image( min_width=1024, min_height=1024, max_width=1024, max_height=1024)}, outputs={'image': runway.image})
+@runway.command('project', inputs={'projectionImage': runway.image( min_width=1024, min_height=1024, max_width=1024, max_height=1024), 'steps': runway.number (min=10, max=1000, default=200)}, outputs={'image': runway.image})
 def project(model, inputs):
     im = inputs['projectionImage']
     if not os.path.exists('./projection'):
@@ -70,9 +70,10 @@ def project(model, inputs):
 
     dataset_tool.create_from_images("./projection/records/", "./projection/imgs/", True)
 
-    output = get_projected_real_images("records","./projection/",1,10, 100, model)
+    output = get_projected_real_images("records","./projection/",1,10, inputs['steps'], model)
 
-    return output[9]
+    #return the last item
+    return output[-1]
 
 
 if __name__ == '__main__':
