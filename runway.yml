@@ -9,3 +9,4 @@ files:
     - checkpoints/*
 build_steps:
   - pip install -r requirements.txt
+  - wget http://d36zk2xti64re0.cloudfront.net/stylegan1/networks/metrics/vgg16_zhang_perceptual.pkl
