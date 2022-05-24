@@ -5,5 +5,5 @@ requests==2.21.0
 Werkzeug==0.14.1
 gevent>=1.4.0
 runway-python
-tensorflow-gpu==1.15.0
+tensorflow-gpu==2.6.4
 scipy>=1.2.1
